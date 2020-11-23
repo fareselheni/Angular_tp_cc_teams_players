@@ -41,5 +41,12 @@ export class HeaderComponent implements OnInit , OnDestroy {
   ngOnDestroy() {
     this.counterSubscription.unsubscribe();
   }
+   getColor() {
+    if(this.isAuth === true) {
+      return 'white';
+    } else  {
+      return 'black';
+    }
+  }
 
 }
