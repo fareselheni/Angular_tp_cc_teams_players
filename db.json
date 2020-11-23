@@ -1,0 +1,71 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "teams": [
+    {
+      "id": "1",
+      "team_name": "USM"
+    },
+    {
+      "id": "2",
+      "team_name": "ESS"
+    },
+    {
+      "id": "13",
+      "team_name": "EST"
+    },
+    {
+      "id": "4",
+      "team_name": "CSS"
+    }
+  ],
+  "players": [
+    {
+      "id": "2",
+      "ref": "2",
+      "cin": "1234",
+      "Nom": "amine ben amor",
+      "age": "30",
+      "poste": "milieu"
+    },
+    {
+      "id": "66",
+      "ref": "13",
+      "cin": "06457898",
+      "Nom": "hamdou houni",
+      "age": "24",
+      "poste": "Attaque"
+    },
+    {
+      "id": "202",
+      "ref": "1",
+      "cin": "06457898",
+      "Nom": "bechir ben said",
+      "age": "23",
+      "poste": "gardien"
+    },
+    {
+      "id": "55",
+      "ref": "5",
+      "cin": "06457898",
+      "Nom": "wissem ben yahya",
+      "age": "30",
+      "poste": "Milieu"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form (ngSubmit)="updatePlayer()" #f="ngForm">
+      <h3>Update Player</h3>
+      <div class="from-group">
+        <label for="id">Id</label>
+        <input type="text" id="id" class="form-control" name="id" [(ngModel)]="p.id"  ngModel required disabled>
+      </div>
+      <div class="from-group">
+        <label for="ref">ref</label>
+        <input type="text" id="ref" class="form-control" name="ref" [(ngModel)]="p.ref" #ref="ngModel" required >
+        <div *ngIf="ref.invalid && ref.touched">
+          ref obligatoire
+        </div>
+      </div>
+      <div class="from-group">
+        <label for="cin">cin</label>
+        <input type="text" id="cin" class="form-control" name="cin" [(ngModel)]="p.cin" #cin="ngModel" required minlength="8" maxlength="8">
+        <div *ngIf="cin.invalid && cin.touched">
+          Cin obligatoire et necessite 8 chars
+        </div>
+      </div>
+      <div class="from-group">
+        <label for="Nom">Nom</label>
+        <input type="text" id="Nom" class="form-control" name="Nom" [(ngModel)]="p.Nom" #nom="ngModel" required >
+        <div *ngIf="nom.invalid && nom.touched">
+          Nom obligatoire
+        </div>
+      </div>
+      <div class="from-group">
+        <label for="age">age</label>
+        <input type="text" id="age" class="form-control" name="age" [(ngModel)]="p.age" #age="ngModel" required >
+        <div *ngIf="age.invalid && age.touched">
+          Age obligatoire
+        </div>
+      </div>
+
+      <div class="from-group">
+        <label for="poste">poste</label>
+        <input type="text" id="poste" class="form-control" name="poste" [(ngModel)]="p.poste" #poste="ngModel" required >
+        <div *ngIf="poste.invalid && poste.touched">
+          Poste obligatoire
+        </div>
+      </div>
+
+
+
+      <button type="submit" class="btn btn-success" [disabled]="f.invalid">Ajouter</button>
+    </form>
+
+  </div>
+</div>

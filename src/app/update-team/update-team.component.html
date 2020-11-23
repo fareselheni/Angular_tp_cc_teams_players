@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form (ngSubmit)="updateUser()" #f="ngForm">
+      <h3>User Form</h3>
+      <div class="from-group">
+        <label for="id">Id</label>
+        <input type="text" id="id" class="form-control" name="id" [(ngModel)]="p.id"  ngModel required disabled>
+      </div>
+      <div class="from-group">
+        <label for="team_name">Team_Name</label>
+        <input type="text" id="team_name" class="form-control" name="team_name" [(ngModel)]="p.team_name" #team_name="ngModel" required >
+        <div *ngIf="team_name.invalid && team_name.touched">
+          team_name obligatoire
+        </div>
+      </div>
+
+
+
+      <button type="submit" class="btn btn-success" [disabled]="f.invalid">Ajouter</button>
+    </form>
+
+  </div>
+</div>

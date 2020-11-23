@@ -1,0 +1,51 @@
+<div class="container" style="horiz-align: center">
+  <div class="row">
+    <div class="col-xs-offset-7">
+
+<ul class="list-group" *ngFor="let l of listTeams ; let i=index">
+  <li class="list-group-item" style="text-align: center"><h3>Name: {{l.team_name}}</h3> Id: {{l.id}}
+
+
+  </li>
+  <button  type="button" class="btn btn-primary" (click)="newList(l.id)">SHOW Players</button>
+  <button type="button" class="btn btn-primary" [routerLink]="['/update',l.id]" >Modifier</button>
+  <button type="button" class="btn btn-danger" (click)="deleteP(l)">Supprimer</button>
+
+
+
+</ul>
+</div>
+</div>
+</div>
+
+<table class="table" *ngIf="z!=0" border="1" >
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col" class="white">#</th>
+    <th scope="col" class="white">ID</th>
+    <th scope="col" class="white">CIN</th>
+    <th scope="col" class="white">Name</th>
+    <th scope="col" class="white">Age</th>
+    <th scope="col" class="white">Poste</th>
+    <th scope="col" class="white">Modifier</th>
+    <th scope="col" class="white">Supprimer</th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr *ngFor="let p of listPlayers2; let i=index">
+    <th scope="row" class="white">Player {{i}} </th>
+    <td class="white">{{p.id}}</td>
+    <td class="white">{{p.cin}}</td>
+    <td class="white">{{p.Nom}}</td>
+    <td class="white">{{p.age}}</td>
+    <td class="white">{{p.poste}}</td>
+    <td class="white"><button type="button" class="btn btn-primary" [routerLink]="['/updateplayer',p.id]" >Modifier</button></td>
+    <td class="white"><button type="button" class="btn btn-danger" (click)="deletePlayer(p)">Supprimer</button></td>
+  </tr>
+
+  </tbody>
+</table>
+
+
+<router-outlet></router-outlet>
+

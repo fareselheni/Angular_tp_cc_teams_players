@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form [formGroup]="playerForm" (ngSubmit)="addTeam()">
+      <h2 >ADD PLAYER</h2>
+      <div class="from-group">
+        <label for="id" style="color: white">id</label>
+        <input type="text" id="id" class="form-control" formControlName="id"  [(ngModel)]="p.id">
+        <div *ngIf="playerForm.get('id').invalid && playerForm.get('id').touched">id obligatoire </div>
+
+      </div>
+      <div class="from-group">
+        <label for="ref" style="color: white">ref</label>
+        <input type="text" id="ref" class="form-control" formControlName="ref" [(ngModel)]="p.ref">
+        <div *ngIf="playerForm.get('ref').invalid && playerForm.get('ref').touched">ref obligatoire </div>
+      </div>
+
+      <div class="from-group">
+        <label for="cin" style="color: white">Cin</label>
+        <input type="text" id="cin" class="form-control" formControlName="cin" [(ngModel)]="p.cin">
+        <div *ngIf="playerForm.get('cin').invalid && playerForm.get('cin').touched">cin obligatoire </div>
+
+      </div>
+
+      <div class="from-group">
+        <label for="Nom" style="color: white">Nom</label>
+        <input type="text" id="Nom" class="form-control" formControlName="Nom" [(ngModel)]="p.Nom">
+        <div *ngIf="playerForm.get('Nom').invalid && playerForm.get('Nom').touched">Nom obligatoire </div>
+      </div>
+
+      <div class="from-group">
+        <label for="age" style="color: white">age</label>
+        <input type="text" id="age" class="form-control" formControlName="age" [(ngModel)]="p.age">
+        <div *ngIf="playerForm.get('age').invalid && playerForm.get('age').touched">Age obligatoire </div>
+      </div>
+      <div class="from-group">
+        <label for="poste" style="color: white">poste</label>
+        <input type="text" id="poste" class="form-control" formControlName="poste" [(ngModel)]="p.poste">
+        <div *ngIf="playerForm.get('poste').invalid && playerForm.get('poste').touched">Poste obligatoire </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="playerForm.invalid">Ajouter</button>
+    </form>
+
+  </div>
+</div>

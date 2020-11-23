@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a routerLink="teams">Teams</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a routerLink="/addteam">Add Team</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a routerLink="/addplayer">Add Player</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-collapse">
+      <li *ngIf="isAuth"><a style="color: red">Vous êtes connecté depuis {{ secondes }} secondes !</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li routerLinkActive="active" *ngIf="!isAuth">
+        <a routerLink="auth/signup">Créer un compte</a>
+      </li>
+      <li routerLinkActive="active" *ngIf="!isAuth">
+        <a routerLink="auth/signin">Connexion</a>
+      </li>
+      <li>
+        <a (click)="onSignOut()" *ngIf="isAuth" style="cursor: pointer">Déconnexion</a>
+      </li>
+    </ul>
+  </div>
+</nav>
